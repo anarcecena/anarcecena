@@ -1,0 +1,61 @@
+<html>
+<head>
+<title> Te tengo una sorpresa...
+</title>
+</head>
+<body>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center> 
+<div> 
+<font face="Century"> <font size="5"> <font color="red"> Cuenta regresiva  </font> 
+</div>
+
+
+<div id="countdown"></div>
+<script>
+var end = new Date('11/9/2021 3:00 PM');
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = 'Vístete elegante y ponte guapa 💖¡Paso por ti a las 8:30!💖 ';
+
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+        document.getElementById('countdown').innerHTML = days + ' dias, ';
+        document.getElementById('countdown').innerHTML += hours + ' horas, ';
+        document.getElementById('countdown').innerHTML += minutes + ' minutos y ';
+        document.getElementById('countdown').innerHTML += seconds + ' segundos';
+    }
+
+    timer = setInterval(showRemaining, 1000);
+    
+</script>
+
+
+</body>
+</html>
